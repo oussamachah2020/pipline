@@ -22,10 +22,9 @@ jobs:
 
       - name: Build Astro site
         run: npm run build
-        
+
       - name: Deploy to server
         run: |
-          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} << 'EOF'
             cd ${{ secrets.APP_DIR }}
             git pull origin main
             npm install
